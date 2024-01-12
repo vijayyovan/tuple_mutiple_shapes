@@ -1,0 +1,48 @@
+import colorgram
+import turtle
+
+# colors = colorgram.extract('image1.jpg',10)
+# color_palette = []
+#
+# for count in range(len(colors)):
+#     rgb = colors[count].rgb
+#     r = rgb.r
+#     g = rgb.g
+#     b = rgb.b
+#     new_color = (r, g, b)
+#     color_palette.append(new_color)
+# print(color_palette)
+
+import turtle
+from turtle import Turtle, Screen
+
+
+color_list =[(199, 175, 117), (124, 36, 24), (210, 221, 213), (168, 106, 57), (222, 224, 227), (186, 158, 53), (6, 57, 83), (109, 67, 85)]
+
+color_list = [(r/255, g/255, b/255) for r,g,b in color_list]
+# for i in range(len(color_list)):
+#     turtle.dot(size=20)
+
+dot_trurtle = turtle.Turtle()
+
+def draw(space,distance, heigth):
+    for _ in range(heigth):
+        for color in color_list:
+            dot_trurtle.dot(space,color)
+            dot_trurtle.penup()
+            dot_trurtle.forward(distance)
+            dot_trurtle.pendown()
+    # dot_trurtle.backward(distance * len(color_list))
+            dot_trurtle.setheading(225)
+    # dot_trurtle.right(90)
+            dot_trurtle.forward(space)
+    # dot_trurtle.left(90)
+            dot_trurtle.setheading(0)
+
+draw(20,30,10)
+
+
+
+
+screen = Screen()
+screen.exitonclick()
